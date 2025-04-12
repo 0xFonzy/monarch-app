@@ -16,9 +16,8 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useSidebar } from "@/components/ui/sidebar";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
-import { useTheme } from "@/hooks/use-theme";
 
 interface LeftPanelProps {
   className?: string;
@@ -27,7 +26,6 @@ interface LeftPanelProps {
 const LeftPanel: React.FC<LeftPanelProps> = ({ className }) => {
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
-  const { theme } = useTheme();
 
   const navItems = [
     { icon: Home, label: "Dashboard", path: "/" },
@@ -93,11 +91,6 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ className }) => {
 
       <div className="mt-auto py-4 flex items-center gap-2">
         <ThemeToggle className="text-[hsl(var(--foreground))] hover:bg-[hsl(var(--panel))]" />
-        {!isCollapsed && (
-          <span className="text-sm text-[hsl(var(--label))]">
-            {theme === "dark" ? "Dark Mode" : "Light Mode"}
-          </span>
-        )}
       </div>
     </div>
   );
