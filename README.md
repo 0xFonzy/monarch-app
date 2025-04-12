@@ -2,6 +2,10 @@
 
 A modern web application for managing and tracking financial transactions with a focus on user experience and functionality.
 
+## Design Resources
+
+- [Figma Design](https://www.figma.com/community/file/1492578183892527094/monarch-transactions-app)
+
 ## Features
 
 - 📊 Transaction list with grouping by date
